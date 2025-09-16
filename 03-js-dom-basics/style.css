@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 125px));
+  justify-content: center;
+}
+
+.count_box{
+    width: 75%;
+    margin:100px;
+    padding:5px;
+    border:5px;
+    background:black;
+    color:cadetblue
+}
+
+.bottle-line{
+  grid-column: 1 / -1;   
+  background: brown;
+  height: 2px;
+  line-height: 0; 
+}
+button{
+    background-color: aqua;
+}
