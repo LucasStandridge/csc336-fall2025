@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Animals</title>
+        <script src="animal.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="add-new-animal">
+            <form id="add-animal-form">
+                <label for="animal-type-field">Animal Type:</label>
+                <input id="animal-type-field" type="text"></input>
+
+                <label for="animal-str-field">Strength:</label>
+                <input id="animal-str-field" type="number" min="1" max="20"></input>
+
+                <label for="animal-rizz-field">Charisma:</label>
+                <input id="animal-rizz-field" type="text"></input>
+
+                <button type="submit" id="create-animal-button">Create Animal!</button>
+            </form>
+        </div>
+        <div id="all-animal-info"></div>
+    </body>
+</html>

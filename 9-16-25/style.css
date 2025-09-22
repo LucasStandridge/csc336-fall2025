@@ -1,0 +1,9 @@
+.dice-roll{
+    font: size 40px;
+    background-color:aquamarine
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+}

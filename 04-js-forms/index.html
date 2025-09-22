@@ -1,0 +1,59 @@
+<HTML>
+    <head>
+        <title>Cards</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <form id = add-card-form>
+            <label for = "card-name-field">Card Name</label>
+            <input id="card-name-field" type="text">
+
+            <label for = "card-paradigm-field">Paradigm:</label>
+            <select id="card-paradigm-field" name="Card Paradigm">
+                <option value = "Knight">Knight</option>
+                <option value = "Wizard">Wizard</option>
+                <option value = "SpellSword">Spell Sword</option>
+                <option value = "Juggernaut">Juggernaut</option>
+                <option value = "Alchemist">Alchemist</option>
+                <option value = "Assassin">Assassin</option>
+            </select>
+            
+            <label for = "card-type-field">Type</label>
+            <select id="card-type-field" name="Card Type">
+                <option value = "Attack">Attack</option>
+                <option value = "Spell">Spell</option>
+                <option value = "Advancement">Advancement</option>
+            </select>
+            
+            <label for = "card-damage-type-field">Damage Type</label>
+            <select id ="card-damage-type-field" name="Card Effect">
+                <option value = "Physical">Physical</option>
+                <option value = "Magical">Magical</option>
+                <option value = "No Damage">No Damage</option>
+            </select>
+            
+            <label for = "card-cost-field">Cost</label>
+            <input id = "card-cost-field" type = "number" min = 0 max = 10>
+
+            <label for = "card-effect-field">Effect</label>
+            <input id="card-effect-field" type="text">
+
+            <button type="submit" id="create-card-button">Create Card!</button>
+        </form>
+            <form id = filter-search>
+                <label for = "paradigm-filter-field">Filter by Paradigm:</label>
+                <select id="paradigm-filter-field" name="Paradigm Filter">
+                    <option value = "Knight">Knight</option>
+                    <option value = "Wizard">Wizard</option>
+                    <option value = "SpellSword">Spell Sword</option>
+                    <option value = "Juggernaut">Juggernaut</option>
+                    <option value = "Alchemist">Alchemist</option>
+                    <option value = "Assassin">Assassin</option>
+                    <option value = "ShowAll">Show All</option>
+                </select>
+                <button type="filter" id = "filter-button">Filter</button>
+            </form>
+        <div id="card"></div>
+    </body>
+</HTML>
