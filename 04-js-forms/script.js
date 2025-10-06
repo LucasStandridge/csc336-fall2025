@@ -214,7 +214,7 @@ let addCardForm = document.querySelector("#add-card-form");
 addCardForm.addEventListener("submit", addNewCard);
 
 let filterForm = document.querySelector("#filter-search");
-filterForm.addEventListener("submit", filterParadigm)
+filterForm.addEventListener("submit", filterParadigm);
 
 function filterParadigm(e){
     e.preventDefault();

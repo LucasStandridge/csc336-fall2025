@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Compliments Only (Dupont)</title>
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    </head>
+    <body>
+        <h1>Where To Find Us</h1>
+            <p>
+                Compliments Only is located at 2029 P Street, in Dupont Circle. 
+            </p>
+        <h1>What We Offer</h1>
+            <p>
+                We sell a wide variety of sandwiches! From meatball subs to a classic turkey sub with chips on it, we have everything that you could expect from a Jewish deli.<br>
+                Feel free to order one of our premade favorites or create your own custom dream sub! <br>
+                All sandwiches come on a 10 inch white bread. We can also serve them as a salad on a bed of lettuce, or on a 10 inch gluten free baguette. Ask away and we will do our best to make your experience as perfect as possible!
+            </p>
+        <h1>Menu Sandwiches</h1>
+            <h2>Best Sellers</h2>
+                <h3>Crunchy Boi</h3>
+                    <p>
+                        Homemade garlic aioli, followed by a glu tof Utz ripple chips, provolone, and deli turkey. Onions, pickles, and shredded lettuce top that off, with a generous amount of balsamic oil to finish our most popular sandiwch. Simple but amazing, you can't go wrong with the Crunchy Boi.
+                    </p>
+                <h3>Teamster</h3>
+                    <p>
+                        The Teamster is our version of a classic italian sub.  Ham, capicola, and genoa salami go on this one, followed by provolone, italian sweet and hot peppers, onions, lettuce, and of course, balsamic oil. Another staple of any sandwich shop, our Teamster is an homage of the famous delis of New York and New Jersey.
+                    </p>
+                <h3>Marisa Tomei Eats Free</h3>
+                    <p>
+                        Named after the actress who one an Oscar in my favorite movie, the Marisa Tomei Eats Free is a light, refreshing sub, perfect for a hot day or those who don't have the stomach for one of our usually huge subs. Starting with our homemade honey chili aioli and followed a tasteful amount of capicola, and an above average serving of salami, the Marisa Tomei is defined by the arugula salad that is put on top of it. Tossed on the side with oil, chili flakes, oregano, onions, and a whole lot of basil, the salad goes right from the mixing bowl to the sandwich. 
+                    </p>
+        <form id="sandwich_selections">
+            <label>
+                <input type="checkbox" id="crunchyboi_checkbox" value="crunchyboi"> Crunchy Boi
+            </label>
+            <input id="crunchyboi_number_field" type="number" min="1" max="3" style="display:none;"><br>
+
+            <label>
+                <input type="checkbox" id="teamster_checkbox" value="teamster"> Teamster
+            </label>
+            <input id="teamster_number_field" type="number" min="1" max="3" style="display:none;"><br>
+
+            <label>
+                <input type="checkbox" id="marisatomei_checkbox" value="marisatomei"> Marisa Tomei Eats Free
+            </label>
+            <input id="marisatomei_number_field" type="number" min="1" max="3" style="display:none;"><br>
+
+            <button type="submit">Order!</button>
+        </form>
+    </body>
+</html>
