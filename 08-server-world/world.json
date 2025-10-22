@@ -1,0 +1,198 @@
+{
+  "year": "400",
+  "region": [
+    {
+      "name": "Highlands",
+      "climate": "Cold mountain air, fresh, rarely humid",
+      "location": "Mid-north.Mountain range stretches far east, completely blockages access to Strunval",
+      "towns": [
+        {
+          "settlement": "High Point Monastery",
+          "population": 605,
+          "notable_people": [
+            {
+              "name": "Priest Kunst",
+              "occupation": "Priest",
+              "role": "Greet travelers and lead them towards rooms to stay in",
+              "items": [
+                {
+                  "name": "Monks' Robes",
+                  "rarity": "Common",
+                  "effect": "1 faith, 1 constituion"
+                },
+                {
+                  "name": "Monks' Blindfold",
+                  "rarity": "Common",
+                  "effect": "Blinds the wearer"
+                }
+              ],
+              "friends": [
+                "Initiate Monk Bon"
+              ]
+            },
+            {
+              "name": "High Priest Mornil",
+              "occupation": "High Priest",
+              "role": "Run High Point Monastery, administer punihsment, ensure that rules are adhered to, even by travelers.",
+              "items": [
+                {
+                  "name": "Robes of the High Priest",
+                  "rarity": "Rare",
+                  "effect": "3 faith, 2 consitution"
+                },
+                {
+                  "name": "Cane of Sight",
+                  "rarity": "Epic",
+                  "effect": "Allows user to see while under the effects of blindness if wielded in both hands. Mildly improves sight in the dark"
+                }
+              ],
+              "friends": [
+                "Monkey Monk"
+              ]
+            }
+          ]
+        },
+        {
+          "settlement": "Village of the Brutes",
+          "population": 80,
+          "cause": "Plague spread",
+          "notable_people": [
+            {
+              "name": "Ruvar",
+              "occupation": "Hunter",
+              "items": [
+                {
+                  "name": "Savage Club",
+                  "rarity": "Common",
+                  "effect": "2 strength, 20 concussion buildup"
+                }
+              ],
+              "friends": [
+                "Ill Omened Orc",
+                "Ill Omened Orc"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Strunval",
+      "climate": "Cold temperature, snows often, harsh conditions",
+      "location": "North of the Highlands. Furthest known region on the continent",
+      "towns": [
+        {
+          "settlement": "Snowpoint Ruins",
+          "population": 2684,
+          "cause": "Fruitful trades",
+          "notable_people": [
+            {
+              "name": "Ruins Scavenger",
+              "occupation": "Nomad",
+              "role": "Digs up hidden treasures of a once great civilization that now remains frozen in the snow",
+              "items": [
+                {
+                  "name": "Frostbitten Spade",
+                  "rarity": "Common",
+                  "effect": "A bit more durable than the common shovel"
+                },
+                {
+                  "name": "Ruined Amulet",
+                  "rarity": "Rare",
+                  "effect": "Does nothing. Perhaps someone who knows the history of the land can help decipher what it was once for"
+                }
+              ],
+              "friends": [
+                "Ruins Forager"
+              ]
+            }
+          ]
+        },
+        {
+          "settlement": "Bastion of the Fjord",
+          "population": 2500,
+          "cause": "Nothing ever happens!",
+          "notable_people": [
+            {
+              "name": "Asthal, King of the Northpeople",
+              "occupation": "Warlord, King",
+              "role": "Rules over the few settlements of the North. Known as the strongest in the land, and rules by might and conquest",
+              "items": [
+                {
+                  "name": "Weathered Sword",
+                  "rarity": "Rare",
+                  "effect": "A basic, weathered sword. Not actually the one that Asthal uses in battle. +3 str"
+                },
+                {
+                  "name": "Crown of the Frozen Behemoth",
+                  "rarity": "Legendary",
+                  "effect": "A crown fashioned from the horns and maw of a great frozen monstronsity that lies in the depths of the Fjord. Effects unknown"
+                }
+              ],
+              "friends": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mojin Kingdom",
+      "climate": "Dry, hot air. Harsh seasons and hardened warriors mark the reputation of the land",
+      "locaiton": "East border towards the south of the highlands. The great Broken Landsea rune perpendicular to the mountain range, isolating the kingdom from others",
+      "towns": [
+        {
+          "settlement": "Emerald City",
+          "population": 8367,
+          "cause": "Plentiful harvests",
+          "notable_people": [
+            {
+              "name": "Herald of the Sky",
+              "occupation": "Foreseer",
+              "role": "Adjutant to the Queen. The public eye knows of her existence and power, but little of her herself",
+              "items": [
+                {
+                  "name": "Emerald Robe",
+                  "rarity": "Epic",
+                  "effect": "An opulent emerald green robe. Silky to the touch, only the finests for the Queen's most trusted assistant. +3 charisma, +3 intelligence"
+                },
+                {
+                  "name": "Orb of the Sky Mother",
+                  "rarity": "Legendary",
+                  "effect": "Grants the user sight of everything in a 2 mile radius. Can 'zoom in' on certain parts."
+                }
+              ],
+              "friends": []
+            }
+          ]
+        },
+        {
+          "settlement": "Caravan of the Travelling Trouope",
+          "population": 1091,
+          "cause": "Blessed by the Gods",
+          "notable_people": [
+            {
+              "name": "Troupe Leader Anothos",
+              "occupation": "Master Entertainer",
+              "role": "Leaders the famous Travelling Troupe, a nomadic group of entertainers who bring an entire cities worth of entertainment wherever they go",
+              "items": [
+                {
+                  "name": "Mask of the Performer",
+                  "rarity": "Epic",
+                  "effect": "+8 charisma. Allows the wearer a near perfect impression of any person they have met extensively before"
+                },
+                {
+                  "name": "Multi-Tool Cane",
+                  "rarity": "Common",
+                  "effect": "A cane with multiple purposes. Has a concealed blade, can be used to set up stages, and also looks cool. A handy tool to have around"
+                }
+              ],
+              "friends": [
+                "Troupe Jester"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
