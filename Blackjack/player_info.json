@@ -1,0 +1,9 @@
+{
+    "players": 
+    [
+        {
+        "name": "test",
+        "bankroll": 1500
+        }
+    ]
+}

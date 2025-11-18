@@ -1,0 +1,17 @@
+[
+    {
+      "task": "Eat dinner",
+      "complete": false,
+      "id": 1
+    },
+    {
+      "task": "Pet cat",
+      "complete": true,
+      "id":2
+    },
+    {
+      "task": "Beat Mario Sunshine",
+      "complete": true,
+      "id":3
+    }
+]
