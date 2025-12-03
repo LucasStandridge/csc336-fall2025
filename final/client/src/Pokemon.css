@@ -1,0 +1,12 @@
+#flexbox-div {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.favorite_pokemon_button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}

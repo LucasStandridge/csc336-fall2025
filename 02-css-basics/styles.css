@@ -9,6 +9,7 @@ nav {
     border: 1px solid #ccc;
     margin-bottom: 30px;
 }
+
 nav.flex {
         display: flex;
         justify-content: space-around;
@@ -42,6 +43,7 @@ nav.flex {
         text-align: center;
         padding: 20px;
       }
+      
 .card{
     width: 75%;
     margin:100px;
