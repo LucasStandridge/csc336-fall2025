@@ -10,7 +10,7 @@ export default function CreateUser(){
     async function handleSubmit(e){
         e.preventDefault();
         try{
-            const users_json = await fetch("http://localhost:3000/Users");
+            const users_json = await fetch("/api/Users");
             if(!users_json.ok) throw new Error("couldnt fetch users_json, probably restart server");
             const users_data = await users_json.json();
             // const new_id = await users_data[users_data.length-1];
@@ -23,7 +23,7 @@ export default function CreateUser(){
                 teams:[]
             }
 
-            await fetch(`http://localhost:3000/Users`, {
+            await fetch(`/api/Users`, {
                 method: "POST", 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(new_user),

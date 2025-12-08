@@ -21,7 +21,7 @@ export default function App() {
   async function logIn(username, password) {
 
     //Fetch the user data that I have stored
-    const res = await fetch("/Users");
+    const res = await fetch("/api/Users");
     const data = await res.json();
     const found_names = []
     for (let user of data) {
@@ -43,10 +43,10 @@ export default function App() {
     useEffect(() => {
         async function loadData() {
             //get the data
-            const res = await fetch("/Pokemon_Data");  
+            const res = await fetch("/api/Pokemon_Data");  
             let data = await res.json(); 
             //put all the data into the pokemon list, which will be used for displaying it later
-            setPokemonList(data);
+            setPokemonList(data);       
             //console.log("Pokemon loaded")
     }
     loadData();
@@ -76,7 +76,7 @@ export default function App() {
     );
 
     //Now I need to patch the user, so that the favorite_pokemon category of the user object is updated
-    await fetch(`/Users/${user.id}`, {
+    await fetch(`/api/Users/${user.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ favorite_pokemon: updatedFavorites })

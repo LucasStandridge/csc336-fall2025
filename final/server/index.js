@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/Pokemon_Data", async (req,res)=>{
+app.get("/api/Pokemon_Data", async (req,res)=>{
     try{
         console.log("get request received (users)");
         let file_contents = fs.readFileSync("./Pokemon_Data.json", "utf-8");
@@ -19,7 +19,7 @@ app.get("/Pokemon_Data", async (req,res)=>{
     }
 });
 
-app.get("/Users", async(req,res) =>{
+app.get("/api/Users", async(req,res) =>{
     try{
         console.log("get request received (users)");
         let file_contents = fs.readFileSync("./Users.json", "utf-8");
