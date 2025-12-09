@@ -1,23 +1,25 @@
-import "./Filters.css";
 export default function FilterPanel({ filters, setFilters }) {
 
+  //This was fun. I made a setFilters in the original App.jsx, which keeps track of what filter options
+  //Have been selected. For exampole, clicking this generation one will save the generation that was picked, etc
   function changeGen(e) {
     setFilters(prev => ({ ...prev, generation: e.target.value }));
   }
 
+  //etc
   function changeType(e){
     setFilters(prev =>({ ...prev,type:e.target.value}))
   }
 
+  //etc
   function searchName(e){
     setFilters(prev =>({...prev,name:e.target.value}))
   }
 
   return (
     <div>
-      <h2>All Pokemon</h2>
         <form id="search">
-            <h3>Filter by Generation</h3>
+            <h3 className="filters-h3">Filter by Generation</h3>
             <select 
                 id="gen_filter" 
                 name="gen_filter" 
@@ -36,7 +38,7 @@ export default function FilterPanel({ filters, setFilters }) {
                 <option value = "9">Generation 9</option>
             </select>
 
-            <h3>Filter by Type</h3>
+            <h3 className="filters-h3">Filter by Pokemon Type</h3>
             <select 
                 id="type_filter" 
                 name="type_filter" 
@@ -64,8 +66,9 @@ export default function FilterPanel({ filters, setFilters }) {
 
             </select>
 
-            <h3>Search</h3>
+            <h3 className="filters-h3">Search for a Pokemon</h3>
             <input 
+            //obviously the placeholder is going to be my favorite pokemon
                 placeholder = "Tyranitar"
                 id="card-name-field" 
                 type="text" 

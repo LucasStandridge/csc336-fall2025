@@ -31,7 +31,7 @@ app.get("/api/Users", (req, res) => {
     }
 });
 
-app.post('/Pokemon_Data', (req, res) => {
+app.post('/api/Pokemon_Data', (req, res) => {
     try {
         let file_data = JSON.parse(fs.readFileSync("./Pokemon_Data.json", "utf-8"));
         file_data.push(req.body);
@@ -42,7 +42,7 @@ app.post('/Pokemon_Data', (req, res) => {
     }
 });
 
-app.post("/Users", (req, res) => {
+app.post("/api/Users", (req, res) => {
     try {
         let file_data = JSON.parse(fs.readFileSync("./Users.json", "utf-8"));
         file_data.push(req.body);
@@ -53,7 +53,7 @@ app.post("/Users", (req, res) => {
     }
 });
 
-app.patch("/Pokemon_Data/:id", (req, res) => {
+app.patch("/api/Pokemon_Data/:id", (req, res) => {
     const pokemonId = Number(req.params.id);
     const updatedData = req.body;
     let pokemonData = JSON.parse(fs.readFileSync("Pokemon_Data.json"));
@@ -64,13 +64,14 @@ app.patch("/Pokemon_Data/:id", (req, res) => {
     res.json(pokemonData[index]);
 });
 
-app.patch("/Users/:id", (req, res) => {
+app.patch("/api/Users/:id", (req, res) => {
     const user_id = Number(req.params.id);
     const updated_data = req.body;
     let users_data = JSON.parse(fs.readFileSync("Users.json"));
     const index = users_data.findIndex(u => u.id === user_id);
     if (index === -1) return res.status(404).json({ error: "User not found" });
     users_data[index] = { ...users_data[index], ...updated_data };
+    console.log(users_data)
     fs.writeFileSync("Users.json", JSON.stringify(users_data));
     res.json(users_data[index]);
 });
