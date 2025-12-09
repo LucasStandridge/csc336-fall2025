@@ -170,14 +170,16 @@ export default function App() {
                 <Route path="/home" element={
                     <NavBoard
                         setLoggedIn={setLoggedIn}
-                        current_user={current_user} />
+                        logged_in={logged_in}
+                    />
                 } />
                 <Route path="/favorite_pokemon" element={
                     <FavoritePokemon
                         pokemon_list={pokemon_list}
                         updateFavoriteStatus={updateFavoriteStatus}
                         current_user={current_user}
-                        setCurrentUser={setCurrentUser} />
+                        setCurrentUser={setCurrentUser}
+                        logged_in={logged_in} />
                 } />
 
                 <Route path="/final_evos" element={
@@ -190,14 +192,17 @@ export default function App() {
                         current_user={current_user}
                         setCurrentUser={setCurrentUser}
                         display_nav={true}
-                        updateTeamStatus={updateTeamStatus} />
+                        updateTeamStatus={updateTeamStatus}
+                        logged_in={logged_in} />
                 } />
 
                 <Route path="/teams" element={
                     <Teams
                         current_user={current_user}
                         pokemon_list={pokemon_list}
-                        setCurrentUser={setCurrentUser} />
+                        setCurrentUser={setCurrentUser}
+                        logged_in={logged_in}
+                    />
                 } />
 
                 <Route path="/teambuilder" element={
@@ -209,7 +214,9 @@ export default function App() {
                         updateFavoriteStatus={updateFavoriteStatus}
                         current_user={current_user}
                         setCurrentUser={setCurrentUser}
-                        updateTeamStatus={updateTeamStatus} />
+                        updateTeamStatus={updateTeamStatus}
+                        logged_in={logged_in}
+                    />
                 } />
             </Routes>
         </BrowserRouter>

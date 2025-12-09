@@ -4,8 +4,19 @@ import { useEffect } from 'react';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Teams({ current_user, pokemon_list, setCurrentUser }) {
+export default function Teams({ current_user, pokemon_list, setCurrentUser, logged_in }) {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!logged_in) {
+            navigate("/")
+            toast("You have been logged out due to refresh. Please log back in.")
+        }
+    }, [logged_in]);
+
+    if (!logged_in || !current_user) {
+    return null;
+}
 
     //If the user has an empty teams (like if they delete them) i want to get rid of them
     useEffect(() => {

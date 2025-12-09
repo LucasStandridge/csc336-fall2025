@@ -1,5 +1,9 @@
 import FilterPanel from "./Filters.jsx";
 import NavBoard from "./NavBoard.jsx"
+import { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //This is like, the MAIN file. Its super important and was what started this whole project idea
 export default function FinalEvos({
@@ -7,10 +11,18 @@ export default function FinalEvos({
     filters, setFilters,
     updateFavoriteStatus,
     current_user, setCurrentUser,
-    display_nav, updateTeamStatus, team_index
-}) 
+    display_nav, updateTeamStatus, team_index,
+    logged_in
+})
 //it gets a ton of parameters because so many other pages rely on it
 {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!logged_in) {
+            navigate("/")
+            toast("You have been logged out due to refresh. Please log back in.")
+        }
+    }, [logged_in]);
     //this is a variable that stores what pokemon should be displayed. It gets the filter decisions
     //from the Filters.jsx
     const filtered_pokemon = pokemon_list.filter(p => {

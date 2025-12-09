@@ -1,7 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavBoard from "./NavBoard";
 import FetchPokemon from "./FinalEvolutions";
-
+import { useEffect } from 'react'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //Because teameditor links to fetchpokemon, it needs all the same parameters as that one
 export default function TeamEditor({
     pokemon_list,
@@ -11,8 +13,21 @@ export default function TeamEditor({
     updateFavoriteStatus,
     current_user,
     setCurrentUser,
-    updateTeamStatus
+    updateTeamStatus,
+    logged_in
 }) {
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!logged_in) {
+            navigate("/")
+            toast("You have been logged out due to refresh. Please log back in.")
+        }
+    }, [logged_in]);
+    if (!logged_in || !current_user) {
+    return null;
+}
+
     //the index of the team being edited is given by the link in Team.jsx
     const { state } = useLocation();
     const team_index = state.team_index;
@@ -63,6 +78,7 @@ export default function TeamEditor({
                 display_nav={false}
                 updateTeamStatus={updateTeamStatus}
                 team_index={team_index}
+                logged_in={logged_in}
             />
         </div>
     );

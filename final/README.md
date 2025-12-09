@@ -11,7 +11,7 @@ I had a ton of fun making this, and did have to use the internet for some parts 
 
 I also was unable to come up with a solution in time for making new teams while also clearing empty arrays in the useEffect, so all teams come with 1 pokemon to start with. I think its fine, and its definetely a not too hard solution, but I did not get around to it. 
 
-Also, refreshing the page breaks it. I thin I need to check on every page if the user is logged in, and if they aren't, navigate to the login page to fix this. I did not get around to it.
+I did not have time to add comments because it is being added so last minute, but refreshing will bring you to the home page. It checks the passed in variable logged_in, and if it is not true, you navigate to login. If this is broken on any o fthe pages, it is because I did a poor job and procrastinated so I did not get to test it in time.
 
 I also originally planned on using mongoDB to store usernames, but again, did not get around to it. Im sorry, but your passwords are not safe with me.
 
