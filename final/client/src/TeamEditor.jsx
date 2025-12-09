@@ -41,7 +41,7 @@ export default function TeamEditor({
 
             {/*Some text for if the team is empty*/}
             {team_pokemon.length === 0 ? (
-                <p className="empty-team-msg">Your team is empty! Add some Pokémon</p>
+                <p className="empty-team-msg">Your team is empty! Add some Pokémon!</p>
             ) : (
                 //otherwise i want to show the pokemon in the team
                 <div className="team-pokemon-grid">
