@@ -24,10 +24,7 @@ export default function TeamEditor({
             toast("You have been logged out due to refresh. Please log back in.")
         }
     }, [logged_in]);
-    if (!logged_in || !current_user) {
-    return null;
-}
-
+    
     //the index of the team being edited is given by the link in Team.jsx
     const { state } = useLocation();
     const team_index = state.team_index;

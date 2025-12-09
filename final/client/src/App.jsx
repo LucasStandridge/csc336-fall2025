@@ -120,9 +120,13 @@ export default function App() {
             curr_team.splice(curr_team.indexOf(pokemon.id), 1);
             toast(`${pokemon.name.toUpperCase()} removed from Team ${team_index + 1}`)
         } else {
-            //if it isnt, it gets added
+            //if it isnt, it gets added if there isnt 6 pokemon already
+            if(curr_team.length <6 ){
             curr_team.push(pokemon.id);
             toast(`${pokemon.name.toUpperCase()} added to Team ${team_index + 1}`)
+            }else{
+                toast(`Team ${team_index+1} already has 6 Pokemon!`)
+            }
         }
 
         //Need to make a new variable to pass to the react state later
