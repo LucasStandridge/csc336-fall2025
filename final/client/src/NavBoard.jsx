@@ -1,18 +1,7 @@
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import { useEffect } from 'react'
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 function NavBoard({setLoggedIn,logged_in}) {
-
-    const navigate = useNavigate();
-    useEffect(() => {
-        if (!logged_in) {
-            navigate("/")
-            toast("You have been logged out due to refresh. Please log back in.")
-        }
-    }, [logged_in]);
-
   //i like this page
   const location = useLocation();
   //NavBoard is used in lots of other places, but it also is the home page. So if

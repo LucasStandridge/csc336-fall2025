@@ -1,1 +1,41 @@
-[{"id":1,"username":"Lucas","password":"dev","favorite_pokemon":[248,635,34,306,3],"teams":[[871,12]]},{"id":2,"username":"Lucas2","password":"dev2","favorite_pokemon":[389],"teams":[[530,12]]}]
+[
+  {
+    "id": 1,
+    "username": "Lucas",
+    "password": "dev",
+    "favorite_pokemon": [
+      248,
+      635,
+      34,
+      306,
+      3
+    ],
+    "teams": [
+      [
+        871,
+        12
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "username": "Lucas2",
+    "password": "dev2",
+    "favorite_pokemon": [
+      389
+    ],
+    "teams": [
+      [
+        530,
+        12
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "username": "Danimal",
+    "password": "test",
+    "favorite_pokemon": [],
+    "teams": []
+  }
+]
