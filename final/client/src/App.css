@@ -72,8 +72,11 @@ body {
         font-weight: bold;
 }
 
-/*Make the searching look good*/
+/*Make the searching look good and making it sticky*/
 #search {
+        position:sticky;
+        top: 80px;
+        z-index:500;
         background-color: #d0f0c0;
         border: 3px solid #4b7f4b;
         border-radius: 10px;

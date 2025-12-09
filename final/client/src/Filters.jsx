@@ -17,7 +17,6 @@ export default function FilterPanel({ filters, setFilters }) {
   }
 
   return (
-    <div>
         <form id="search">
             <h3 className="filters-h3">Filter by Generation</h3>
             <select 
@@ -76,6 +75,5 @@ export default function FilterPanel({ filters, setFilters }) {
             </input>
 
         </form>
-    </div>
   );
 }

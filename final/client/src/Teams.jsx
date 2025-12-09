@@ -1,6 +1,8 @@
 import NavBoard from './NavBoard';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Teams({ current_user, pokemon_list, setCurrentUser }) {
     const navigate = useNavigate();
@@ -49,6 +51,7 @@ export default function Teams({ current_user, pokemon_list, setCurrentUser }) {
                                         ...prev,
                                         teams: prev.teams.filter((_, index) => index !== team_index)
                                     }));
+                                    toast(`Team ${team_index+1} deleted`)
                                 }}>Delete This Team</button>
                             </h3>
 

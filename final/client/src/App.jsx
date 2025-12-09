@@ -8,6 +8,9 @@ import FavoritePokemon from './FavoritePokemon.jsx';
 import Teams from "./Teams.jsx";
 import TeamEditor from "./TeamEditor.jsx";
 import "./App.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //Trillions and billions of imports
 
 export default function App() {
@@ -23,26 +26,40 @@ export default function App() {
 
     //A function that will be passed into the login page to log in (shocker)
     async function logIn(username, password) {
-        //Fetch the user data that I have stored
+        //Get all the users
         const res = await fetch("/api/Users");
         const data = await res.json();
+
+        //matched user is null by default
+        let matched_user = null;
+
+        //If a username matches, matched_user gets the username
         for (let user of data) {
-            //if the username matches
             if (user.username === username) {
-                //and the password matches
-                if (user.password === password) {
-                    //you get logged in, and the user information is kept for later
-                    setCurrentUser(user)
-                    setLoggedIn(true);
-                } else {
-                    //toasyify notification will go here later
-                    console.log("password incorrect");
-                }
+                matched_user = user;
+                break;
             }
         }
-        //returns false if you are not found
-        return false;
+
+        //If there is no matched user, the username is wrong
+        if (!matched_user) {
+            toast(`${username} is an incorrect username. Please try again`);
+            return false;
+        }
+
+        //Otherwise the password is wrong
+        if (matched_user.password !== password) {
+            toast("Password incorrect");
+            return false;
+        }
+        //Otherwise it works
+        toast(`Login success, thank you ${username}`);
+        setCurrentUser(matched_user);
+        setLoggedIn(true);
+
+        return true;
     }
+
 
     //When the website starts, I want to get all the pokemon data. It needs to be in this jsx because it gets passed 
     //to so many different pages
@@ -66,9 +83,12 @@ export default function App() {
         //Then, if the pokemon is already in the favorites it should be removed
         if (updatedFavorites.includes(pokemon.id)) {
             updatedFavorites.splice(updatedFavorites.indexOf(pokemon.id), 1);
+            toast(`${pokemon.name.toUpperCase()} removed from Favorites`)
             //Otherwise, it should be added
         } else {
             updatedFavorites.push(pokemon.id);
+            toast(`${pokemon.name.toUpperCase()} added to Favorites`)
+
         }
 
         //Then i need to update the React state to make the changes visible
@@ -98,9 +118,11 @@ export default function App() {
         //if the pokemon is in the team, it needs to be removed
         if (curr_team.includes(pokemon.id)) {
             curr_team.splice(curr_team.indexOf(pokemon.id), 1);
+            toast(`${pokemon.name.toUpperCase()} removed from Team ${team_index + 1}`)
         } else {
             //if it isnt, it gets added
             curr_team.push(pokemon.id);
+            toast(`${pokemon.name.toUpperCase()} added to Team ${team_index + 1}`)
         }
 
         //Need to make a new variable to pass to the react state later
@@ -131,7 +153,15 @@ export default function App() {
 
 
     return (
+
         <BrowserRouter>
+            <ToastContainer
+                position="top-right"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+            />
             <Routes>
                 {/*The basic path should be the log in page, so it is the first thing seen */}
                 <Route path="/" element={<LoginPage logIn={logIn} logged_in={logged_in} />} />
@@ -166,8 +196,8 @@ export default function App() {
                 <Route path="/teams" element={
                     <Teams
                         current_user={current_user}
-                        pokemon_list={pokemon_list} 
-                        setCurrentUser={setCurrentUser}/>
+                        pokemon_list={pokemon_list}
+                        setCurrentUser={setCurrentUser} />
                 } />
 
                 <Route path="/teambuilder" element={
@@ -183,5 +213,6 @@ export default function App() {
                 } />
             </Routes>
         </BrowserRouter>
+
     );
 }

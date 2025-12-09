@@ -27,10 +27,16 @@ function NavBoard({setLoggedIn}) {
           </p>
           <p>
             “See all final evolutions” displays every fully evolved Pokémon, organized by Pokédex order.
+            There are buttons next to them that are grey by default. Clicking the button will add that Pokemon to your
+            favorites, and the button will change to indicate that a Pokemon is one of your favorites
             <br />
-            A star next to each Pokémon lets you add or remove it from your favorites.
+            The “favorite pokemon” page shows all your favorites. 
             <br />
-            The “favorite pokemon” page shows all your favorites.
+            You can also visit the Teams tab. This will allow you to build a team of pokemon, and they all come
+            with a starter Pokemon to get the team kicked off. Feel free to build your team around your randomly
+            selected starter, or kick your starter out and build from scratch!
+            <br /> 
+            I hope you enjoy my website.
           </p>
 
           {/*This is to make the page look better. I wanted it to have buttons like a gameboy*/}

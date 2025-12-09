@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css"; // import the same CSS
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //This was like the easiest page to make which i didnt expect for some reason
 export default function CreateUser() {
@@ -18,29 +20,41 @@ export default function CreateUser() {
       const users_json = await fetch("/api/Users");
       if (!users_json.ok) throw new Error("Couldn't fetch users_json");
       const users_data = await users_json.json();
-      //Make a unique id = which is just the next number not used, i guess it should be a random number but it 
-      //doesnt really matter
-      const new_id = users_data.length;
-      //Make a new user with the specified features, everything else is blank
-      const new_user = {
-        id: new_id + 1,
-        username: username,
-        password: password,
-        favorite_pokemon: [],
-        teams: [],
-      };
+      let unique_name = true
+      for (let user of users_data) {
+        if (user.username === username) {
+          unique_name = false;
+        }
+      }
 
-      //add the users to the json
-      await fetch(`/api/Users`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(new_user),
-      });
+      if (unique_name) {
+        //Make a unique id = which is just the next number not used, i guess it should be a random number but it 
+        //doesnt really matter
+        const new_id = users_data.length;
+        //Make a new user with the specified features, everything else is blank
+        const new_user = {
+          id: new_id + 1,
+          username: username,
+          password: password,
+          favorite_pokemon: [],
+          teams: [],
+        };
 
-      //this should be a toastify later
-      console.log("User created", new_user);
-      //put them into the login page after creation
-      navigate("/");
+        //add the users to the json
+        await fetch(`/api/Users`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(new_user),
+        });
+
+        toast("User created")
+        //put them into the login page after creation
+        navigate("/");
+      } else {
+        toast(`${username} is already taken. Please pick another.`)
+
+      }
+
     } catch (err) {
       console.log(err);
     }
@@ -78,7 +92,12 @@ export default function CreateUser() {
         >
           {show_password ? "Hide Password" : "Show Password"}
         </button>
-
+        <p>
+          Note: Please do NOT enter sensitive information as a username or password.
+          <br />
+          They are not securely stored
+          in a database at the moment of this being released.
+        </p>
         <button type="submit">Submit</button>
       </form>
     </div>
